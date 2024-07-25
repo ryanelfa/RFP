@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Google Slides and RFP Details" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input label="RFP Title" value={rfpName} onchange={handleInputChange} data-id="rfpName"></lightning-input>
+            <lightning-textarea label="RFP Content" value={rfpCore} onchange={handleInputChange} data-id="rfpCore"></lightning-textarea>
+            <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-card>
+
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCancel}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Duplicate RFP Title</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p>A RFP with this title already exists. Do you want to overwrite it or create a new one?</p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={handleCancel}></lightning-button>
+                    <lightning-button variant="destructive" label="Overwrite" onclick={handleOverwrite}></lightning-button>
+                    <lightning-button variant="brand" label="Create New" onclick={handleCreateNew}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

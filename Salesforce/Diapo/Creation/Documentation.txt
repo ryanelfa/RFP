@@ -1,0 +1,114 @@
+----------------------------
+CreeZoneTxtSolutions.py :
+----------------------------
+    creer_zone_de_texte : même fonction que ci-dessus
+
+        Objectif :
+    
+            Crée et Insère une zone de texte dans une présentation Google Slides.
+            Les paramètres incluent les informations de position et de taille de la zone de texte, 
+            ainsi que les caractéristiques du texte (couleur, taille, alignement, etc.).
+            L'API Google Slides est utilisée pour créer la zone de texte et définir le style de celui-ci
+
+
+        Paramètres : 
+        
+            service : Le service Google Slides authentifié.
+            presentation_id : L'ID de la présentation Google Slides.
+            numero_diapo : L'ID de la diapositive où la zone de texte sera ajoutée.
+            x_position_cm, y_position_cm : Positions en cm pour la zone de texte.
+            width_cm, height_cm : Largeur et hauteur en cm de la zone de texte.
+            texte : Le texte à insérer dans la zone de texte.
+            couleur_texte : Couleur du texte (format RGB).
+            centrer_texte : Booléen pour centrer le texte ou non.
+            taille_police : Taille de la police en points.
+            gras : Booléen pour définir si le texte doit être en gras ou non.
+
+    fetch_salesforce_data : 
+
+        Objectif :
+            Se connecte à Salesforce et récupère les données présents dans les champs d'une table spécifique (ici : solutions_salesforce__c)
+            De plus on s'attend à ce que les données de la table soit sous la forme de données JSON, ce code après avoir récupéré
+            les données retourne les données JSON nettoyées
+
+        Paramètres :
+            Aucune entrée, utilise des informations d'identification pour se connecter à Salesforce.
+       
+    format_json_to_text : 
+
+        Objectif :
+            Formate les données JSON en une liste de lignes de texte lisibles.
+
+        Paramètres :
+            json_data : Les données JSON à formater.
+
+    main : 
+
+        Objectif :
+
+            récupère en entrée du code l'id de la présentation source ainsi que l'id de la diapo source, récupère
+            les données Salesforce et les formate en texte puis crée des zones de texte et les insère dans la 
+            présentation google slides en les positionnant correctement.
+
+
+-------------------------------------------
+CreeZoneTxtDeclarationConditionnelles.py :
+-------------------------------------------
+
+
+    creer_zone_de_texte : même fonction que ci-dessus
+
+    main : 
+
+        Objectif :
+
+            récupère en entrée du code l'id de la présentation source ainsi que l'id de la diapo source, puis 
+            génère la slide liées aux déclarations conditionnelles.
+
+-----------------------------
+CreeZoneTxtExecSummary :
+-----------------------------
+
+    fetch_salesforce_data : 
+
+        Objectif :
+            Se connecte à Salesforce et récupère les données présents dans les champs d'une table spécifique (ici : Enjeux__c, Stratege__c,WhyStrategie__c et *)
+            De plus on s'attend à ce que les données de la table soit sous la forme de données JSON, ce code après avoir récupéré
+            les données retourne les données JSON nettoyées
+
+        Paramètres :
+            Aucune entrée, utilise des informations d'identification pour se connecter à Salesforce.
+    
+    format_json_to_text : 
+
+        Objectif :
+            Formate les données JSON en une liste de lignes de texte lisibles.
+
+        Paramètres :
+            json_data : Les données JSON à formater.
+
+    main : 
+            récupère en entrée du code l'id de la présentation source ainsi que l'id de la diapo source, récupère
+            les données Salesforce et les formate en texte puis crée des zones de texte et les insère dans la 
+            présentation google slides en les positionnant correctement.
+
+----------------------
+CreeZonePricing.py :
+----------------------
+
+    creer_zone_de_texte : même fonction que ci-dessus
+
+    main : 
+            récupère en entrée du code l'id de la présentation source ainsi que l'id de la diapo source puis crée des zones de texte et les insère dans la 
+            présentation google slides en les positionnant correctement.
+
+----------------------------
+CreeZoneTxtSommaire.py :
+----------------------------
+
+    creer_zone_de_texte : même fonction que ci-dessus
+
+    main : 
+            récupère en entrée du code l'id de la présentation source ainsi que l'id de la diapo source puis crée des zones de texte et les insère dans la 
+            présentation google slides en les positionnant correctement.
+
